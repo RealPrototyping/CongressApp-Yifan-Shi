@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct MainView: View {
+struct HomeView: View {
     @State private var searchText = ""
     @State private var items: [Item] = []
     @State private var isUserAddTitlePresented = false
@@ -160,12 +160,6 @@ struct MainView: View {
                     }
                     .padding(.bottom, 20)
                 }
-                
-                
-            }
-        VStack {
-            ToolbarView()
-                .frame(height:10)
             }
         }
         
@@ -180,5 +174,5 @@ struct MainView: View {
     }
 
 #Preview {
-    MainView()
+    HomeView()
 }

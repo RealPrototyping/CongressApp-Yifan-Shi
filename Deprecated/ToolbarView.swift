@@ -12,49 +12,82 @@ struct ToolbarView: View {
     @State private var isPresentingFullView2 = false
     @State private var isPresentingFullView3 = false
     @State private var isPresentingFullView4 = false
+    @State private var isPresentingFullView5 = false
 
     var body: some View {
         HStack {
+            Spacer()
             Button(action: {
                 isPresentingFullView1.toggle()
             }) {
-                Image(systemName: "tv")
-                Text("Shows")
+                VStack(){
+                    Image(systemName: "tv.fill")
+                    Text("Shows")
+                }
+                .foregroundStyle(Color(.gray))
             }
             .fullScreenCover(isPresented: $isPresentingFullView1) {
                 ShowsView()
             }
+            Spacer()
             Button(action: {
                 isPresentingFullView2.toggle()
             }) {
-                Image(systemName: "house")
-                Text("Main")
+                VStack(){
+                    Image(systemName: "house.fill")
+                    Text("Main")
+                }
+                .foregroundStyle(Color(.gray))
             }
             .fullScreenCover(isPresented: $isPresentingFullView2) {
                 MainView()
             }
-            
+            Spacer()
             Button(action: {
                 isPresentingFullView3.toggle()
             }) {
-                Image(systemName: "film")
-                Text("Movies")
+                VStack(){
+                    Image(systemName: "movieclapper.fill")
+                    Text("Movies")
+                }
+                .foregroundStyle(Color(.gray))
             }
             .fullScreenCover(isPresented: $isPresentingFullView3) {
                 MoviesView()
             }
+            Spacer()
             Button(action: {
                 isPresentingFullView4.toggle()
             }) {
-                Image(systemName: "person")
-                Text("Profile")
+                VStack(){
+                    Image(systemName: "person.crop.circle.fill")
+                    Text("Profile")
+                }
+                .foregroundStyle(Color(.gray))
             }
             .fullScreenCover(isPresented: $isPresentingFullView4) {
                 ProfileView()
             }
+            Spacer()
+            Button(action: {
+                isPresentingFullView5.toggle()
+            }) {
+                VStack(){
+                    Image(systemName: "newspaper.fill")
+                    
+                    Text("News")
+                }
+                .foregroundStyle(Color(.gray))
+            }
+            .fullScreenCover(isPresented: $isPresentingFullView5) {
+                NewsView()
+            }
+            Spacer()
         }
         .padding()
         .background(Color(UIColor.systemBackground))
+        
+        
     }
 }
 

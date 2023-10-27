@@ -32,6 +32,7 @@ struct UpcomingView: View {
                 }
                 .fullScreenCover(isPresented: $isPresentingFullView) {
                     MainView()
+                        
                 }
             }
             
