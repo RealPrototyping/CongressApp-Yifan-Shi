@@ -10,6 +10,10 @@ import SwiftUI
 struct MenuTabView: View {
     var body: some View {
         TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
             ShowsView()
                 .tabItem {
                     Label("Shows", systemImage: "tv.fill")
@@ -18,19 +22,19 @@ struct MenuTabView: View {
                 .tabItem {
                     Label("Movies", systemImage: "movieclapper.fill")
                 }
-            MainView()
+            UserSearchView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person.crop.circle.fill")
+                    Label("Search", systemImage: "magnifyingglass.circle.fill")
                 }
             NewsView()
                 .tabItem {
                     Label("News", systemImage: "newspaper.fill")
+                    
                 }
+            
+            
         }
+        
     }
 }
 

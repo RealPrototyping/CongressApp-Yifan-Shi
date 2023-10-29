@@ -17,6 +17,13 @@ struct NewsView: View {
     @State private var selectedArticleURL: IdentifiableURL? = nil
     var body: some View {
         VStack {
+            Text("News")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
+                .background(Rectangle().foregroundColor(Color(.blue)))
+                .cornerRadius(5)
+                .shadow(radius:10)
             if let articles = viewModel.newsFeed?.articles {
                 List(articles) { article in
                     VStack(alignment: .leading) {

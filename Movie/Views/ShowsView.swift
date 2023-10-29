@@ -10,33 +10,19 @@ import SwiftUI
 struct ShowsView: View {
     @State private var isPresentingFullView = false
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color(.green)
-                    .ignoresSafeArea()
-                ScrollView {
-                    HStack(){
-                        Button(action: {
-                            isPresentingFullView.toggle()
-                        }, label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.white)
-                        }
-                               
-                               
-                        )
-                        .padding()
-                        Spacer()
-                    }
-                    
-                }
-                .fullScreenCover(isPresented: $isPresentingFullView) {
-                    MainView()
-                }
-            }
-            
-        }
         
+        VStack() {
+            Text("Shows")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
+                .background(Rectangle().foregroundColor(Color(.green)))
+                .cornerRadius(5)
+                .shadow(radius:10)
+            
+            ShowView()
+        }
+        .padding(.bottom, 20)
         
     }
 }

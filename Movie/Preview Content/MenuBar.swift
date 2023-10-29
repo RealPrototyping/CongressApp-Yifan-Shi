@@ -40,7 +40,7 @@ struct MenuBar: View {
         .tag(Tab.movies)
 
       // Profile Tab
-      ProfileView()
+      UserSearchView()
         .tabItem {
           Label("Profile", systemImage: "person")
         }
@@ -50,6 +50,6 @@ struct MenuBar: View {
 }
 struct MainTabView: View {
   var body: some View {
-    MainView()
+    HomeView()
   }
 }

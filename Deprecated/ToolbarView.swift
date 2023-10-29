@@ -40,7 +40,7 @@ struct ToolbarView: View {
                 .foregroundStyle(Color(.gray))
             }
             .fullScreenCover(isPresented: $isPresentingFullView2) {
-                MainView()
+                HomeView()
             }
             Spacer()
             Button(action: {
@@ -66,7 +66,7 @@ struct ToolbarView: View {
                 .foregroundStyle(Color(.gray))
             }
             .fullScreenCover(isPresented: $isPresentingFullView4) {
-                ProfileView()
+                UserSearchView()
             }
             Spacer()
             Button(action: {

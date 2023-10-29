@@ -11,7 +11,8 @@ import SwiftUI
 struct MovieApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            //Due to how TabView functions, MenuTabView() is now the actual "Main" view. MainView() will be renamed "HomeView()".
+            MenuTabView()
         }
     }
 }

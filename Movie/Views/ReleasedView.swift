@@ -8,38 +8,25 @@
 import SwiftUI
 
 struct ReleasedView: View {
-    @State private var isPresentingFullView = false
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color(.systemMint)
-                    .ignoresSafeArea()
-                ScrollView {
-                    HStack(){
-                        Button(action: {
-                            isPresentingFullView.toggle()
-                        }, label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.white)
-                        }
-                               
-                               
-                        )
-                        .padding()
-                        Spacer()
-                    }
-                    
-                }
-                .fullScreenCover(isPresented: $isPresentingFullView) {
-                    MainView()
-                }
-            }
+        VStack() {
+            Text("Newly Released Movies")
+                .font(.title2)
+                
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
+                .background(Rectangle().foregroundColor(Color(.systemMint)))
+                .cornerRadius(5)
+                .shadow(radius:10)
             
+            RelView()
         }
-        
+    }
+}
+struct ReleasedView_Previews: PreviewProvider {
+    static var previews: some View {
+        ReleasedView()
     }
 }
 
-#Preview {
-    ReleasedView()
-}
+

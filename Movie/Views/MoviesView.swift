@@ -11,32 +11,19 @@ struct MoviesView: View {
     @State private var isPresentingFullView = false
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                Color(.orange)
-                    .ignoresSafeArea()
-                ScrollView {
-                    HStack(){
-                        Button(action: {
-                            isPresentingFullView.toggle()
-                        }, label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.white)
-                        }
-                               
-                               
-                        )
-                        .padding()
-                        Spacer()
-                    }
-                    
-                }
-                .fullScreenCover(isPresented: $isPresentingFullView) {
-                    MainView()
-                }
-            }
+        VStack() {
+            Text("Movies")
+                .font(.title2)
+                
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
+                .background(Rectangle().foregroundColor(Color(.orange)))
+                .cornerRadius(5)
+                .shadow(radius:10)
             
+            PopView()
         }
+        .padding(.bottom, 20)
         
     }
 }

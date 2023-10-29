@@ -8,35 +8,26 @@
 import SwiftUI
 
 struct UpcomingView: View {
-    @State private var isPresentingFullView = false
+    
+    
+    
+    
+    
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color(.red)
-                    .ignoresSafeArea()
-                ScrollView {
-                    HStack(){
-                        Button(action: {
-                            isPresentingFullView.toggle()
-                        }, label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.white)
-                        }
-                               
-                               
-                        )
-                        .padding()
-                        Spacer()
-                    }
-                    
-                }
-                .fullScreenCover(isPresented: $isPresentingFullView) {
-                    MainView()
-                        
-                }
-            }
+        VStack() {
+            Text("Upcoming Movies (US Release)")
+                .font(.title2)
+                
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
+                .background(Rectangle().foregroundColor(.red))
+                .cornerRadius(5)
+                .shadow(radius:10)
             
+            UpView()
         }
+        
     }
     
     
