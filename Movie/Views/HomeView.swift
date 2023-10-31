@@ -18,8 +18,6 @@ struct HomeView: View {
         NavigationView {
             
             ZStack {
-                Color(.white)
-                    .ignoresSafeArea()
                 ScrollView {
                     VStack {
                         HStack {
@@ -49,14 +47,17 @@ struct HomeView: View {
                             
                                 
                             Spacer()
-                            NavigationLink(destination: SettingsView()) {
-                                Image(systemName: "doc.plaintext.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(height: 50)
-                                    .foregroundColor(Color(.blue).opacity(0.2))
-                                    
+                            ZStack {
+                                NavigationLink(destination: SettingsView()) {
+                                    Image(systemName: "doc.plaintext.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(height: 20)
+                                        .foregroundColor(Color(.gray))
+                                        
+                                }
                             }
+                            .frame(width:50)
                             Spacer()
                         }
                         .padding()
@@ -156,8 +157,10 @@ struct HomeView: View {
                     Text("")
                     Text("This application allows users to browse the release dates of movies and shows they plan on watching as well as help users discover new movies or shows they may be interested in.")
                         .padding()
+                    Text("This product uses the Newsapi.org API but is not endorsed or certified by Newsapi.org")
                     Text("This product uses the TMDB API but is not endorsed or certified by TMDB.")
                         .padding()
+                    
                     Image("tmdblogo")
                     Spacer()
                 }
