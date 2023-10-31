@@ -20,7 +20,7 @@ struct MenuTabView: View {
                 }
             MoviesView()
                 .tabItem {
-                    Label("Movies", systemImage: "movieclapper.fill")
+                    Label("Movies", systemImage: "film.fill")
                 }
             UserSearchView()
                 .tabItem {

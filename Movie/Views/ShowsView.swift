@@ -16,7 +16,7 @@ struct ShowsView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
-                .background(Rectangle().foregroundColor(Color(.green)))
+                .background(Rectangle().foregroundColor(Color(.red)))
                 .cornerRadius(5)
                 .shadow(radius:10)
             

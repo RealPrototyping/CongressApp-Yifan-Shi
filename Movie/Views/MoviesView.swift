@@ -17,7 +17,7 @@ struct MoviesView: View {
                 
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
-                .background(Rectangle().foregroundColor(Color(.orange)))
+                .background(Rectangle().foregroundColor(.mint))
                 .cornerRadius(5)
                 .shadow(radius:10)
             

@@ -31,43 +31,55 @@ struct HomeView: View {
                              .sheet(isPresented: $isUserAddTitlePresented) {
                              UserAddTitle(items: $items, isPresented: $isUserAddTitlePresented)
                              }*/ //Impossible to implement at the moment
-                            Text("     ")
                             Spacer()
-                            Text("Aperture")
-                                .font(.title)
+                            Image("logofinal")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 50)
+                                .cornerRadius(10)
+                                .opacity(0.9)
+                                
+                            Spacer()
+                            
+                            Text("a p e r t u r e")
+                                .font(.largeTitle)
                                 .fontWeight(.heavy)
-                                .foregroundColor(Color.gray)
+                                .foregroundColor(Color(red: 0.0784313725490196, green: 0.32941176470588235, blue: 0.38823529411764707))
                                 .multilineTextAlignment(.center)
+                            
                                 
                             Spacer()
                             NavigationLink(destination: SettingsView()) {
                                 Image(systemName: "doc.plaintext.fill")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(height: 20)
-                                    .foregroundColor(.black)
-                                    .shadow(radius: 10)
+                                    .frame(height: 50)
+                                    .foregroundColor(Color(.blue).opacity(0.2))
+                                    
                             }
+                            Spacer()
                         }
                         .padding()
+                        
                         NavigationLink(destination: UpcomingView()){
                                                             VStack(){
                                                                 Text("Upcoming")
                                                                     .font(.title2)
                                                                     .fontWeight(.bold)
                                                                     .foregroundColor(Color.white)
-                                                                Image("upcomingtitle")
+                                                                Image("upcomingstock")
                                                                     .resizable()
                                                                     .aspectRatio(contentMode: .fit)
                                                                     .cornerRadius(10)
                                                             }
                                                             .padding()
-                                                            .background(Rectangle().foregroundColor(.red)
+                                                            .background(Rectangle().foregroundColor(.green)
                                                                 .cornerRadius(15)
                                                                 .shadow(radius: 10))
                                                             .frame(maxWidth: .infinity)
                                                             .padding()
                                                         }
+                        
                         
                         NavigationLink(destination: ReleasedView()) //replacewithreleased)
                         {
@@ -76,13 +88,14 @@ struct HomeView: View {
                                                                     .font(.title2)
                                                                     .fontWeight(.bold)
                                                                     .foregroundColor(Color.white)
-                                                                Image("releasedstock")
+                                                                Image("releasedfinal")
                                                                     .resizable()
                                                                     .aspectRatio(contentMode: .fit)
                                                                     .cornerRadius(10)
+                                                                    
                                                             }
                                                             .padding()
-                                                            .background(Rectangle().foregroundColor(.mint)
+                                                            .background(Rectangle().foregroundColor(.orange)
                                                                 .cornerRadius(15)
                                                                 .shadow(radius: 10))
                                                             .frame(maxWidth: .infinity) // Expand to fill the available width
@@ -100,7 +113,7 @@ struct HomeView: View {
                                                                     .cornerRadius(10)
                                                             }
                                                             .padding()
-                                                            .background(Rectangle().foregroundColor(.orange)
+                                                            .background(Rectangle().foregroundColor(Color(.systemMint))
                                                                 .cornerRadius(15)
                                                                 .shadow(radius: 10))
                                                             .frame(maxWidth: .infinity) // Expand to fill the available width
@@ -118,7 +131,7 @@ struct HomeView: View {
                                                                     .cornerRadius(10)
                                                             }
                                                             .padding()
-                                                            .background(Rectangle().foregroundColor(.green)
+                                                            .background(Rectangle().foregroundColor(.red)
                                                                 .cornerRadius(15)
                                                                 .shadow(radius: 10))
                                                             .frame(maxWidth: .infinity) // Expand to fill the available width
